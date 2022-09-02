@@ -30,4 +30,13 @@ public class Grievance {
     public void setCustomerId(UUID customerId) {
         this.customerId = customerId;
     }
+
+    @Override
+    public String toString() {
+        return "Grievance{" +
+                "subject='" + subject + '\'' +
+                ", summery='" + summery + '\'' +
+                ", customerId=" + customerId +
+                '}';
+    }
 }

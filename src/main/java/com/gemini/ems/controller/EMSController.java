@@ -20,23 +20,9 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("ems")
 public class EMSController {
     private static Logger logger = LoggerFactory.getLogger(EMSController.class);
-    @Autowired
-    private RegistrationService registrationService;
+
     @Autowired
     private ElectricityService electricityService;
-
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/register")
-    public Response<String> registerUser(@RequestBody RegisterUser registerUser) throws ExecutionException, InterruptedException {
-        Response<String> response = new Response<>();
-        response.setData(registrationService.register(registerUser).toString());
-        if(response.getData() != null) {
-            response.setMessage(" User has been registered successfully");
-        }else {
-            response.setMessage("User has not been registered");
-        }
-        return response;
-    }
 
     @GetMapping("/calculate")
     public Response<BillDetails> calculateBill(@RequestParam Integer units) throws ExecutionException,
@@ -52,17 +38,6 @@ public class EMSController {
         return response;
     }
 
-    @PostMapping("/grievance")
-    public Response<String> grievance(@RequestBody Grievance grievance) throws ExecutionException, InterruptedException {
 
-        Response<String> response = new Response<>();
-        response.setData(electricityService.registerComplain(grievance).toString());
-        if(response.getData() != null){
-            response.setMessage("Grievance submitted successfully");
-        }else{
-            response.setMessage("Not able to submit Grievance");
-        }
-        return response;
-    }
 
 }
