@@ -76,4 +76,15 @@ public class RegisterUser {
     public String getPincode() {
         return pincode;
     }
+
+    @Override
+    public String toString() {
+        return "RegisterUser{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", pincode='" + pincode + '\'' +
+                '}';
+    }
 }

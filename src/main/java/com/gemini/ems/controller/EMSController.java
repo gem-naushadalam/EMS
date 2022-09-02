@@ -34,7 +34,7 @@ public class EMSController {
         }else{
             response.setMessage("Not able to fetch bills for " + units + " units");
         }
-
+        logger.info("Total bill amount generated - " + response.getData().getTotalBillAmount() + " for units - " + units);
         return response;
     }
 

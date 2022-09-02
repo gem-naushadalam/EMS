@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutionException;
 @RestController
 @RequestMapping("ems")
 public class GrievanceController {
-    private static Logger logger = LoggerFactory.getLogger(RegistrationController.class);
+    private static Logger logger = LoggerFactory.getLogger(GrievanceController.class);
 
     @Autowired
     private ComplainService complainService;

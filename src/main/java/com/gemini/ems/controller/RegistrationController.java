@@ -32,6 +32,7 @@ public class RegistrationController {
         }else {
             response.setMessage("User has not been registered");
         }
+        logger.info("User - " + registerUser + " has been registered successfully with id - " + response.getData());
         return response;
     }
 }
